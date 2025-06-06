@@ -11,6 +11,7 @@ namespace AssignedTask.BusinessLogic
         {
             services.AddTransient<IValidator<UserRegistrationDto>, UserRegistrationDtoValidator>();
             services.AddTransient<IValidator<UserLoginDto>,UserLoginDtoValidator>();
+            services.AddTransient<IValidator<ProductsRequestDto>,ProductsRequestDtoValidator>();
             return services;
         }
     }

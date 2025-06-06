@@ -8,20 +8,25 @@ namespace AssignedTask.BusinessLogic.DtoValidators
         public UserRegistrationDtoValidator()
         {
             RuleFor(x => x.FirstName)
-                .NotEmpty().WithMessage("Firstname field must not be null!");
+                .NotEmpty().WithMessage("First Name field must not be null!")
+                .MaximumLength(30).WithMessage("First Name field must not be longer than 30 characters!");
 
             RuleFor(x => x.LastName)
-                .NotEmpty().WithMessage("Lastname field must not be null!");
+                .NotEmpty().WithMessage("Last Name field must not be null!")
+                .MaximumLength(30).WithMessage("Last Name field must not be longer than 30 characters!");
 
             RuleFor(x => x.UserName)
-                .NotEmpty().WithMessage("Username field must not be null!");
+                .NotEmpty().WithMessage("Username field must not be null!")
+                .MaximumLength(50).WithMessage("Username field must not be longer than 50 characters!");
 
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage("Email field must not be null!")
-                .EmailAddress().WithMessage("Please enter valid email address!");
+                .EmailAddress().WithMessage("Please enter valid email address!")
+                .MaximumLength(50).WithMessage("Email field must not be longer than 50 characters!");
 
             RuleFor(x => x.Address)
-                .NotEmpty().WithMessage("Address field must not be null!");
+                .NotEmpty().WithMessage("Address field must not be null!")
+                .MaximumLength(1000).WithMessage("Address field must not be longer than 1000 characters!");
 
             RuleFor(x => x.Zipcode)
                 .NotEmpty().WithMessage("Zipcode field must not be null!")
@@ -38,13 +43,16 @@ namespace AssignedTask.BusinessLogic.DtoValidators
                 .WithMessage("Password must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character.");
 
             RuleFor(x => x.CountryId)
-                .NotEmpty().WithMessage("Country field must not be null!");
+                .NotEmpty().WithMessage("Country field must not be null!")
+                .GreaterThan(0).WithMessage("Country field must be greater than 0!");
 
             RuleFor(x => x.StateId)
-                .NotEmpty().WithMessage("State field must not be null!");
+                .NotEmpty().WithMessage("State field must not be null!")
+                .GreaterThan(0).WithMessage("State field must be greater than 0!");
 
             RuleFor(x => x.CityId)
-                .NotEmpty().WithMessage("City field must not be null!");
+                .NotEmpty().WithMessage("City field must not be null!")
+                .GreaterThan(0).WithMessage("City field must be greater than 0!");
         }
     }
 }

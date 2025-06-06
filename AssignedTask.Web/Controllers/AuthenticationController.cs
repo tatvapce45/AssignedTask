@@ -1,6 +1,5 @@
 using AssignedTask.BusinessLogic.Dtos;
 using AssignedTask.BusinessLogic.Services.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AssignedTask.Web.Controllers
@@ -12,11 +11,11 @@ namespace AssignedTask.Web.Controllers
     {
         private readonly IAuthenticationService _authenticationService = authenticationService;
 
-        [Authorize]
         [HttpPost("Register")]
         [ProducesResponseType(typeof(UserRegistrationDto), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(object), StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> RegisterUser([FromBody] UserRegistrationDto dto)
         {
             var result = await _authenticationService.RegisterUser(dto);

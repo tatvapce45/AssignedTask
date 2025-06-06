@@ -14,6 +14,8 @@ namespace AssignedTask.DataAccess
             services.AddScoped<ICountriesRepository, CountriesRepository>();
             services.AddScoped<IStatesRepository, StatesRepository>();
             services.AddScoped<ICitiesRepository, CitiesRepository>();
+            services.AddScoped<ICategoriesRepository,CategoriesRepository>();
+            services.AddScoped<IProductsRepository,ProductsRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             return services;

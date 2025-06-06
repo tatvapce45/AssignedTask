@@ -88,3 +88,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// dotnet ef dbcontext scaffold "Host=localhost;Database=AssignedTask;Username=postgres;password=Tatva@123" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -f

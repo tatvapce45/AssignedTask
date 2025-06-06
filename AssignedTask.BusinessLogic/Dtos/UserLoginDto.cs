@@ -1,12 +1,14 @@
-using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace AssignedTask.BusinessLogic.Dtos
 {
     public class UserLoginDto
-    {
-        public string Email { get; set; } = string.Empty;
+    {   
+        [Required]
+        public required string Email { get; set; }
 
-        public string Password { get; set; } = string.Empty;
+        [Required]
+        public required string Password { get; set; }
 
         public bool RememberMe { get; set; }=false;
 

@@ -14,11 +14,11 @@ namespace AssignedTask.BusinessLogic.Results
 
         public T? Data { get; set; }
 
-        public static ServiceResult<T> Ok(T data,string? message="") =>
-            new() { Success = true, StatusCode = 200, Data = data,Message=message };
+        public static ServiceResult<T> Ok(T data, string? message = "") =>
+            new() { Success = true, StatusCode = 200, Data = data, Message = message };
 
-        public static ServiceResult<T> Created(T data,string? message="") =>
-            new() { Success = true, StatusCode = 201, Data = data,Message=message };
+        public static ServiceResult<T> Created(T data, string? message = "") =>
+            new() { Success = true, StatusCode = 201, Data = data, Message = message };
 
         public static ServiceResult<T> BadRequest(string message, List<string>? validationErrors = null) =>
             new()

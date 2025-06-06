@@ -9,6 +9,7 @@ namespace AssignedTask.BusinessLogic
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IHomeService,HomeService>();
             return services;
         }
 

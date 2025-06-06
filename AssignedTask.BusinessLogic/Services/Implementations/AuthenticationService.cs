@@ -60,7 +60,6 @@ namespace AssignedTask.BusinessLogic.Services.Implementations
             try
             {
                 User? existingUser = await _usersRepository.GetUser(userLoginDto.Email);
-
                 if (existingUser == null)
                 {
                     return ServiceResult<UserLoginDto>.NotFound("User with this email does not exist.");
